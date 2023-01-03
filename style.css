@@ -1,0 +1,54 @@
+:root {
+    --background: #FBFACD;
+    --box: #D09CFA;
+    --heading1: #CB1C8D;
+    
+}
+
+* {
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 0;
+    color: var(--heading1);
+}
+
+h4 {
+    text-align: center;
+    font-size: 150%;
+    color: var(--heading1);
+}
+
+.container {
+    height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
+
+.game {
+    width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 100px;
+  margin-top: 40px;
+  }
+
+.box {
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  
