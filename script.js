@@ -31,56 +31,16 @@ const boxClicked = (e) => {
     const id = e.target.id;
     if (!spaces[id]) {
         spaces[id] = currentPlayer;
+        currentPlayer = currentPlayer === tick_circle ? tick_x : tick_circle;
         e.target.innerText = currentPlayer;
+
     }
     if (playerWon()) {
-        alert('hi');
+        strategy.innerText = '${currentPlayer} has won';
       }
-  
-    currentPlayer = currentPlayer === circle ? cross : circle;
-
+    
 }
-
-const playerWon = () => {
-    if (spaces[0] === currentPlayer) {
-      if (spaces[1] === currentPlayer && spaces[2] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins up to top`;
-        return true;
-      }
-      if (spaces[3] === currentPlayer && spaces[6] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins on the left`;
-        return true;
-      }
-      if (spaces[4] === currentPlayer && spaces[8] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins diagonally`;
-        return true;
-      }
-    }
-    if (spaces[8] === currentPlayer) {
-      if (spaces[2] === currentPlayer && spaces[5] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins on the right`;
-        return true;
-      }
-      if (spaces[6] === currentPlayer && spaces[7] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins on the bottom`;
-        return true;
-      }
-    }
-    if (spaces[4] === currentPlayer) {
-      if (spaces[1] === currentPlayer && spaces[7] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins vertically on middle`;
-        return true;
-      }
-      if (spaces[3] === currentPlayer && spaces[5] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins horizontally on the middle`;
-        return true;
-      }
-      if (spaces[2] === currentPlayer && spaces[6] === currentPlayer) {
-        strategy.innerText = `${currentPlayer} wins diagonally`;
-        return true;
-      }
-    }
-  };
-  drawBoard();
+drawBoard();
+  
 });
 
