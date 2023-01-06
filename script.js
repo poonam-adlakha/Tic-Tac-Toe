@@ -27,6 +27,8 @@ const tick_circle = 'O';
 const tick_x = 'X';
 let currentPlayer = tick_circle;
 
+/* Clickabkle boxes enabled*/
+
 const boxClicked = (e) => {
     const id = e.target.id;
     if (!spaces[id]) {
