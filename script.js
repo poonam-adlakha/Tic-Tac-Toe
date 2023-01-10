@@ -45,40 +45,37 @@ const boxClicked = (e) => {
 
 const playerWon = () => {
     if (spaces[0] === currentPlayer && spaces[1] === currentPlayer && spaces[2] === currentPlayer) {
-      strategy.innerHTML = `${currentPlayer} wins up to top`;
       return true;
     }
     if (spaces[0] === currentPlayer && spaces[3] === currentPlayer && spaces[6] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins on the left`;
       return true;
     }
     if (spaces[0] === currentPlayer && spaces[4] === currentPlayer && spaces[8] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins diagonally`;
       return true;
     }
     if (spaces[8] === currentPlayer && spaces[2] === currentPlayer && spaces[5] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins on the right`;
       return true;
     }
     if (spaces[8] === currentPlayer && spaces[6] === currentPlayer && spaces[7] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins on the bottom`;
       return true;
     }
     
     if (spaces[4] === currentPlayer && spaces[1] === currentPlayer && spaces[7] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins vertically on middle`;
       return true;
     }
     if (spaces[4] === currentPlayer && spaces[3] === currentPlayer && spaces[5] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins horizontally on the middle`;
       return true;
     }
     if (spaces[4] === currentPlayer && spaces[2] === currentPlayer && spaces[6] === currentPlayer) {
-      strategy.innerText = `${currentPlayer} wins diagonally`;
       return true;
     }
 };
 
+const restart = () => {
+  
+}
+
+restart();
 drawBoard();
   
 });
