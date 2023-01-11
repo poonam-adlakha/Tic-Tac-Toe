@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 
-const spaces = [];
+const emptyBox = [];
 const tick_circle = 'O';
 const tick_x = 'X';
 let currentPlayer = tick_circle;
@@ -31,8 +31,8 @@ let currentPlayer = tick_circle;
 
 const boxClicked = (e) => {
     const id = e.target.id;
-    if (!spaces[id]) {
-        spaces[id] = currentPlayer;
+    if (!emptyBox[id]) {
+        emptyBox[id] = currentPlayer;
         e.target.innerText = currentPlayer;
     }
     if (playerWon()) {
@@ -48,37 +48,37 @@ const boxClicked = (e) => {
 }
 
 const playerWon = () => {
-    if (spaces[0] === currentPlayer && spaces[1] === currentPlayer && spaces[2] === currentPlayer) {
+    if (emptyBox[0] === currentPlayer && emptyBox[1] === currentPlayer && emptyBox[2] === currentPlayer) {
       return true;
     }
-    if (spaces[0] === currentPlayer && spaces[3] === currentPlayer && spaces[6] === currentPlayer) {
+    if (emptyBox[0] === currentPlayer && emptyBox[3] === currentPlayer && emptyBox[6] === currentPlayer) {
       return true;
     }
-    if (spaces[0] === currentPlayer && spaces[4] === currentPlayer && spaces[8] === currentPlayer) {
+    if (emptyBox[0] === currentPlayer && emptyBox[4] === currentPlayer && emptyBox[8] === currentPlayer) {
       return true;
     }
-    if (spaces[8] === currentPlayer && spaces[2] === currentPlayer && spaces[5] === currentPlayer) {
+    if (emptyBox[8] === currentPlayer && emptyBox[2] === currentPlayer && emptyBox[5] === currentPlayer) {
       return true;
     }
-    if (spaces[8] === currentPlayer && spaces[6] === currentPlayer && spaces[7] === currentPlayer) {
+    if (emptyBox[8] === currentPlayer && emptyBox[6] === currentPlayer && emptyBox[7] === currentPlayer) {
       return true;
     }
     
-    if (spaces[4] === currentPlayer && spaces[1] === currentPlayer && spaces[7] === currentPlayer) {
+    if (emptyBox[4] === currentPlayer && emptyBox[1] === currentPlayer && emptyBox[7] === currentPlayer) {
       return true;
     }
-    if (spaces[4] === currentPlayer && spaces[3] === currentPlayer && spaces[5] === currentPlayer) {
+    if (emptyBox[4] === currentPlayer && emptyBox[3] === currentPlayer && emptyBox[5] === currentPlayer) {
       return true;
     }
-    if (spaces[4] === currentPlayer && spaces[2] === currentPlayer && spaces[6] === currentPlayer) {
+    if (emptyBox[4] === currentPlayer && emptyBox[2] === currentPlayer && emptyBox[6] === currentPlayer) {
       return true;
     } 
 };
 
 const playerDraw = () => {
   let draw = 0
-  spaces.forEach((space, i) => {
-    if (spaces[i] !== null) {
+  emptyBox.forEach((emptyBoxes, i) => {
+    if (emptyBox[i] !== null) {
       draw++;
     }
     if (draw === 9) {
@@ -90,8 +90,8 @@ const playerDraw = () => {
 
 const restart = () => {
   setTimeout(() => {
-    spaces.forEach((space, i)  => {
-      spaces[i] = null;
+    emptyBox.forEach((emptyBoxes, i)  => {
+      emptyBox[i] = null;
     });
     boxes.forEach ((box) => {
       box.innerText = '';
