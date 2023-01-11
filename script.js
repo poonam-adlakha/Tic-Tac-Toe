@@ -37,9 +37,13 @@ const boxClicked = (e) => {
     }
     if (playerWon()) {
         strategy.innerText = `${currentPlayer} has won`;
-        return;
         restart();
+        return;
       }
+    if (playerDraw()) {
+      strategy.innerText = `It's draw`;
+      return;
+    };
       currentPlayer = currentPlayer === tick_circle ? tick_x : tick_circle;
 }
 
@@ -68,11 +72,32 @@ const playerWon = () => {
     }
     if (spaces[4] === currentPlayer && spaces[2] === currentPlayer && spaces[6] === currentPlayer) {
       return true;
-    }
+    } 
 };
 
+const playerDraw = () => {
+  let draw = 0
+  spaces.forEach((space, i) => {
+    if (spaces[i] !== null) {
+      draw++;
+    }
+    if (draw === 9) {
+      strategy.innerText = "Draw Game";
+      restart();
+    }
+  });
+  }
+
 const restart = () => {
-  
+  setTimeout(() => {
+    spaces.forEach((space, i)  => {
+      spaces[i] = null;
+    });
+    boxes.forEach ((box) => {
+      box.innerText = '';
+    });
+    strategy.innerText ="Play";
+  }, 1000);
 }
 
 restart();
