@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   const boxes = document.querySelectorAll('.box');
   const strategy = document.querySelector('#strategy');
+  const restartButton = document.getElementById('restart')
   const drawBoard = () => {
     boxes.forEach((box, i) => {
         let borderStyle = '';
@@ -98,7 +99,9 @@ const restart = () => {
     });
     strategy.innerText ="Play";
   }, 1000);
-}
+};
+
+restartButton.addEventListener('click', restart);
 
 restart();
 drawBoard();

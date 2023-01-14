@@ -51,4 +51,26 @@ h4 {
     color: black;
   }
 
+  button {
+    background: transparent;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+    align-self: center;
+    font-size: 27px;
+    font-weight: 300;
+    margin: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    color: rgb(1, 4, 7);
+    font-family: Pangolin;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid rgb(209, 15, 122);
+}
+
+.restart:hover {
+    box-shadow: 0 6px 7px -1px #0d0c0c;
+    transform: translateY(-15%);
+}
+
   
